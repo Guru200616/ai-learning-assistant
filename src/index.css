@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0A0A0A;
+  --color-obsidian-light: #111111;
+  --color-champagne: #C5A059;
+  --color-champagne-muted: rgba(197, 160, 89, 0.4);
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-obsidian);
+    color: white;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.champagne-button {
+  background-color: var(--color-champagne);
+  color: var(--color-obsidian);
+  transition: all 0.3s ease;
+}
+
+.champagne-button:hover {
+  background-color: white;
+}
+
+/* Scroll Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.decor-line {
+  background: rgba(255, 255, 255, 0.1);
+}
